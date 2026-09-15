@@ -1,6 +1,6 @@
 import React from 'react'
 import RadarBg from '../../components/auth/RadarBg'
-import LoginForm from '../../components/auth/LoginForm'
+import SignupForm from '../../components/auth/SignupForm'
 import HeroContent from '../../components/auth/HeroContent'
 import Stats from '../../components/auth/Stats'
 import Logo from '../../components/common/Logo'
@@ -58,7 +58,7 @@ const Login = () => {
             xl:w-[430px]
           "
         >
-          <LoginForm />
+          <SignupForm />
         </aside>
 
       </div>

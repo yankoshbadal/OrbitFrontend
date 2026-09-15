@@ -1,13 +1,18 @@
 import './index.css' //just to include this in application build
-import Logo from './components/common/Logo'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './pages/auth/Login'
+import Signup from './pages/auth/Signup';
 
 function App() {
 
   return (
     <>
-      <div>
-        <Logo />
-       </div>
+    <BrowserRouter>
+     <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
