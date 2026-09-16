@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup';
 import Registration from './pages/Registration'
+import Radar from './pages/Radar';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/pre_signup" element={<Signup />} />
         <Route path="/signup" element={<Registration />} />
+        <Route path="/home" element={<Radar />} />
       </Routes>
     </BrowserRouter>
     </>

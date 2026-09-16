@@ -1,14 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileForm = ({ profile, updateProfile }) => {
-  const hobbies = [
-    "Coding",
-    "Music",
-    "Sports",
-    "Gaming",
-    "Movies",
-    "Travel",
-  ];
+  const hobbies = ["Coding", "Music", "Sports", "Gaming", "Movies", "Travel"];
 
   const interests = ["Women", "Men", "Everyone"];
 
@@ -16,7 +10,7 @@ const ProfileForm = ({ profile, updateProfile }) => {
     if (profile.hobbies.includes(hobby)) {
       updateProfile(
         "hobbies",
-        profile.hobbies.filter((item) => item !== hobby)
+        profile.hobbies.filter((item) => item !== hobby),
       );
     } else {
       updateProfile("hobbies", [...profile.hobbies, hobby]);
@@ -35,7 +29,6 @@ const ProfileForm = ({ profile, updateProfile }) => {
 
   return (
     <div>
-
       {/* PHOTO */}
       <label
         htmlFor="photo"
@@ -76,7 +69,6 @@ const ProfileForm = ({ profile, updateProfile }) => {
       </div>
 
       <div className="w-[475px] space-y-[10px]">
-
         <input
           value={profile.name}
           onChange={(e) => updateProfile("name", e.target.value)}
@@ -85,7 +77,6 @@ const ProfileForm = ({ profile, updateProfile }) => {
         />
 
         <div className="grid grid-cols-2 gap-[10px]">
-
           <input
             value={profile.age}
             onChange={(e) => updateProfile("age", e.target.value)}
@@ -95,9 +86,7 @@ const ProfileForm = ({ profile, updateProfile }) => {
 
           <select
             value={profile.pronouns}
-            onChange={(e) =>
-              updateProfile("pronouns", e.target.value)
-            }
+            onChange={(e) => updateProfile("pronouns", e.target.value)}
             className="h-[44px] rounded-[10px] border border-[#4b4843] bg-[#3a3732] px-[14px] text-[13px] outline-none focus:border-[#df6d50]"
           >
             <option value="">Pronouns</option>
@@ -105,7 +94,6 @@ const ProfileForm = ({ profile, updateProfile }) => {
             <option value="she/her">she/her</option>
             <option value="they/them">they/them</option>
           </select>
-
         </div>
 
         <input
@@ -116,7 +104,6 @@ const ProfileForm = ({ profile, updateProfile }) => {
         />
 
         <div className="grid grid-cols-2 gap-[10px]">
-
           <select
             value={profile.year}
             onChange={(e) => updateProfile("year", e.target.value)}
@@ -131,13 +118,10 @@ const ProfileForm = ({ profile, updateProfile }) => {
 
           <input
             value={profile.hometown}
-            onChange={(e) =>
-              updateProfile("hometown", e.target.value)
-            }
+            onChange={(e) => updateProfile("hometown", e.target.value)}
             placeholder="Home town"
             className="h-[44px] rounded-[10px] border border-[#4b4843] bg-[#3a3732] px-[14px] text-[13px] outline-none focus:border-[#df6d50]"
           />
-
         </div>
       </div>
 
@@ -151,9 +135,7 @@ const ProfileForm = ({ profile, updateProfile }) => {
           <button
             key={interest}
             type="button"
-            onClick={() =>
-              updateProfile("interestedIn", interest)
-            }
+            onClick={() => updateProfile("interestedIn", interest)}
             className={`rounded-full border px-4 py-2 text-xs ${
               profile.interestedIn === interest
                 ? "border-[#df6d50] bg-[#30221d] text-[#df8065]"
@@ -198,15 +180,15 @@ const ProfileForm = ({ profile, updateProfile }) => {
         placeholder="A short bio — something people can actually reply to"
         className="h-[83px] w-[475px] resize-none rounded-[10px] border border-[#4b4843] bg-[#3a3732] px-[14px] py-3 text-[13px] outline-none focus:border-[#df6d50]"
       />
-
-      <button
-        type="button"
-        onClick={() => console.log(profile)}
-        className="block mt-5 h-[40px] w-[475px] rounded-[10px] bg-[#df6d50] text-[13px] font-bold transition hover:bg-[#e67b5e]"
-      >
-        Finish profile
-      </button>
-
+      <Link to="/home">
+        <button
+          type="button"
+          onClick={() => console.log(profile)}
+          className="block mt-5 h-[40px] w-[475px] rounded-[10px] bg-[#df6d50] text-[13px] font-bold transition hover:bg-[#e67b5e]"
+        >
+          Finish profile
+        </button>
+      </Link>
     </div>
   );
 };

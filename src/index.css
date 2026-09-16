@@ -6,3 +6,16 @@
         space: ["Space Grotesk", "sans-serif"],
         jetbrains: ["JetBrains Mono", "monospace"],
 */
+@keyframes radar-scan {
+            from {
+              transform: rotate(0deg);
+            }
+
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          .radar-scanner {
+            animation: radar-scan 4s linear infinite;
+          }
