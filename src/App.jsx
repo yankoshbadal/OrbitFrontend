@@ -2,6 +2,7 @@ import './index.css' //just to include this in application build
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup';
+import Registration from './pages/Registration'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <BrowserRouter>
      <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/pre_signup" element={<Signup />} />
+        <Route path="/signup" element={<Registration />} />
       </Routes>
     </BrowserRouter>
     </>

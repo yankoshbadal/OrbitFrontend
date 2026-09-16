@@ -123,7 +123,7 @@ const LoginForm = () => {
       {/* Sign in */}
       <p className="mt-4 text-center text-xs text-[#8e8982]">
         Don't have an account?{" "}
-        <Link to="/signup">
+        <Link to="/pre_signup">
           <button
             type="button"
             className="font-medium text-[#df6c4f] hover:underline"

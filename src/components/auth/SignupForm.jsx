@@ -43,11 +43,11 @@ const SignupForm = () => {
 
       {/* Signup Form */}
       <form onSubmit={handleSubmit} className="mt-5">
-        {/* Name */}
+        {/* First Name */}
         <input
           type="text"
           name="name"
-          placeholder="Your name"
+          placeholder="First Name"
           value={formData.name}
           onChange={handleChange}
           required
@@ -67,6 +67,30 @@ const SignupForm = () => {
           "
         />
 
+        {/* Last Name */}
+        <input
+          type="text"
+          name="name"
+          placeholder="Last Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="
+            mt-2.5
+            h-11
+            w-full
+            rounded-lg
+            border
+            border-white/[0.08]
+            bg-[#3a3733]
+            px-3.5
+            text-sm
+            text-white
+            outline-none
+            placeholder:text-[#888179]
+            focus:border-[#df6c4f]
+          "
+        />
         {/* Email */}
         <input
           type="email"
@@ -141,11 +165,11 @@ const SignupForm = () => {
             focus:border-[#df6c4f]
           "
         />
-
-        {/* Button */}
-        <button
-          type="submit"
-          className="
+        <Link to="/signup">
+          {/* Button */}
+          <button
+            type="submit"
+            className="
             mt-3
             h-11
             w-full
@@ -158,9 +182,10 @@ const SignupForm = () => {
             hover:bg-[#e7795c]
             active:scale-[0.99]
           "
-        >
-          Create account
-        </button>
+          >
+            Create account
+          </button>
+        </Link>
       </form>
 
       {/* Verified Students */}
