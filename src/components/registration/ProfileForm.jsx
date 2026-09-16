@@ -1,7 +1,5 @@
 import React from "react";
 
-import { useState } from "react";
-
 const ProfileForm = ({ profile, updateProfile }) => {
   const hobbies = [
     "Coding",

@@ -36,9 +36,9 @@ const Registration = () => {
           <div className="max-w-[1000px]">
 
             <div className="mb-7">
-              <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold tracking-[1.5px] text-[#b8b3ad]">
+              <div className="mb-2 mt-5 flex items-center gap-2 text-[11px] font-semibold tracking-[1.5px] text-[#b8b3ad]">
                 <span className="h-2 w-2 rounded-full bg-[#7caf91]" />
-                VERIFIED STUDENT
+                  VERIFICATION EMAIL WILL BE SENT
               </div>
 
               <h1 className="font-serif text-[29px] font-bold">

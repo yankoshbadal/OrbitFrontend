@@ -9,7 +9,7 @@ const Logo = () => {
         </div>
       </div>
 
-      <span className="text-sm font-bold tracking-wide text-white font-['sans-serif']">
+      <span className="text-sm font-serif tracking-wide text-white font-bold">
         Orbit
       </span>
     </div>
