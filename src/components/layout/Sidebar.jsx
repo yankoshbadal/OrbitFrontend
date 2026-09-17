@@ -1,33 +1,42 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../common/Logo";
 import React from "react";
+import {
+  Radar,
+  UsersRound,
+  UserCheck,
+  MessageCircle,
+  Heart,
+  Settings,
+} from "lucide-react";
+
 
 const navItems = [
   {
     label: "Radar",
     path: "/home",
-    icon: "◎",
+    icon: Radar,
   },
   {
     label: "Feed",
     path: "/feed",
-    icon: "♧",
+    icon: UsersRound,
   },
   {
     label: "Requests",
     path: "/requests",
-    icon: "✓",
+    icon: UserCheck,
     badge: 2,
   },
   {
     label: "Chats",
     path: "/chats",
-    icon: "◯",
+    icon: MessageCircle,
   },
   {
     label: "Us",
     path: "/us",
-    icon: "♡",
+    icon: Heart,
   },
 ];
 
@@ -48,13 +57,14 @@ const NavItem = ({ item }) => {
       `}
     >
       <span className="flex w-5 items-center justify-center text-lg">
-        {item.icon}
+        <item.icon size={20} strokeWidth={2} />
       </span>
 
       <span>{item.label}</span>
 
       {item.badge && (
-        <span className="
+        <span
+          className="
           ml-auto
           flex h-5 min-w-5
           items-center justify-center
@@ -64,7 +74,8 @@ const NavItem = ({ item }) => {
           text-[10px]
           font-bold
           text-white
-        ">
+        "
+        >
           {item.badge}
         </span>
       )}
@@ -74,7 +85,8 @@ const NavItem = ({ item }) => {
 
 const Sidebar = () => {
   return (
-    <aside className="
+    <aside
+      className="
       fixed inset-y-0 left-0 z-40
       hidden w-[237px]
       flex-col
@@ -82,8 +94,8 @@ const Sidebar = () => {
       bg-[#302d29]
       px-4 py-6
       lg:flex
-    ">
-
+    "
+    >
       {/* Logo */}
       <div className="mb-6 px-2">
         <Logo />
@@ -92,20 +104,18 @@ const Sidebar = () => {
       {/* Navigation */}
       <nav className="space-y-1">
         {navItems.map((item) => (
-          <NavItem
-            key={item.path}
-            item={item}
-          />
+          <NavItem key={item.path} item={item} />
         ))}
       </nav>
 
       {/* Bottom section */}
-      <div className="
+      <div
+        className="
         mt-auto
         border-t border-[#49453f]
         pt-4
-      ">
-
+      "
+      >
         {/* Profile */}
         <NavLink
           to="/profile"
@@ -116,30 +126,36 @@ const Sidebar = () => {
             hover:bg-[#393631]
           "
         >
-          <div className="
+          <div
+            className="
             flex h-9 w-9
             items-center justify-center
             rounded-xl
             bg-[#c5b59d]
             text-sm font-semibold
             text-[#25221f]
-          ">
+          "
+          >
             Y
           </div>
 
           <div>
-            <p className="
+            <p
+              className="
               text-xs
               font-semibold
               text-[#f0ebe4]
-            ">
+            "
+            >
               Yankosh
             </p>
 
-            <p className="
+            <p
+              className="
               text-[11px]
               text-[#aaa39a]
-            ">
+            "
+            >
               View profile
             </p>
           </div>
@@ -160,15 +176,10 @@ const Sidebar = () => {
             }
           `}
         >
-          <span className="text-lg">
-            ⚙
-          </span>
+          <span className="text-lg"><Settings/></span>
 
-          <span>
-            Settings
-          </span>
+          <span>Settings</span>
         </NavLink>
-
       </div>
     </aside>
   );

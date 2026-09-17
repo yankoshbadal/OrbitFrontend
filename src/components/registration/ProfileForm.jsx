@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Image } from "lucide-react";
 
 const ProfileForm = ({ profile, updateProfile }) => {
   const hobbies = ["Coding", "Music", "Sports", "Gaming", "Movies", "Travel"];
@@ -50,7 +51,7 @@ const ProfileForm = ({ profile, updateProfile }) => {
           />
         ) : (
           <>
-            <div className="mb-2 text-xl text-[#df6d50]">▣</div>
+            <div className="mb-2 text-xl text-[#df6d50]"><Image size={20} /></div>
 
             <span className="text-[14px] font-semibold">
               Add your best photo

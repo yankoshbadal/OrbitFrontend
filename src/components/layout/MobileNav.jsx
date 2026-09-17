@@ -1,32 +1,40 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
+import {
+  Radar,
+  UsersRound,
+  UserCheck,
+  MessageCircle,
+  Heart,
+  Settings,
+} from "lucide-react";
 
 const navItems = [
   {
     label: "Radar",
-    path: "/radar",
-    icon: "◎",
+    path: "/home",
+    icon: Radar,
   },
   {
     label: "Feed",
     path: "/feed",
-    icon: "♧",
+    icon: UsersRound,
   },
   {
     label: "Requests",
     path: "/requests",
-    icon: "✓",
+    icon: UserCheck,
     badge: 2,
   },
   {
     label: "Chats",
     path: "/chats",
-    icon: "◯",
+    icon: MessageCircle,
   },
   {
     label: "Us",
     path: "/us",
-    icon: "♡",
+    icon: Heart,
   },
 ];
 
@@ -65,7 +73,7 @@ const MobileNav = () => {
           }
         >
           <span className="text-[19px] leading-none">
-            {item.icon}
+           <item.icon size={20} strokeWidth={2} />
           </span>
 
           <span>{item.label}</span>
