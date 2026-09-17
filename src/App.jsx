@@ -4,6 +4,8 @@ import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup';
 import Registration from './pages/Registration'
 import Radar from './pages/Radar';
+import FeedPeople from './pages/FeedPeople'
+import FeedPosts from './pages/FeedPosts'
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
         <Route path="/pre_signup" element={<Signup />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/home" element={<Radar />} />
+        <Route path="/feed/people" element={<FeedPeople />} />
+        <Route path="/feed/posts" element={<FeedPosts />} />
       </Routes>
     </BrowserRouter>
     </>

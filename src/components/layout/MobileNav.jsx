@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import React from "react";
+
 import {
   Radar,
   UsersRound,
   UserCheck,
   MessageCircle,
   Heart,
-  Settings,
 } from "lucide-react";
 
 const navItems = [
@@ -17,7 +17,7 @@ const navItems = [
   },
   {
     label: "Feed",
-    path: "/feed",
+    path: ["/feed/people", "/feed/posts"],
     icon: UsersRound,
   },
   {
@@ -39,6 +39,8 @@ const navItems = [
 ];
 
 const MobileNav = () => {
+  const location = useLocation();
+
   return (
     <nav
       className="
@@ -50,55 +52,69 @@ const MobileNav = () => {
         lg:hidden
       "
     >
-      {navItems.map((item) => (
-        <NavLink
-          key={item.path}
-          to={item.path}
-          className={({ isActive }) =>
-            `
-            relative
-            flex flex-1
-            flex-col
-            items-center
-            justify-center
-            gap-1
-            text-[10px]
-            transition-colors
-            ${
-              isActive
-                ? "text-[#e47757]"
-                : "text-[#aaa39a]"
-            }
-            `
-          }
-        >
-          <span className="text-[19px] leading-none">
-           <item.icon size={20} strokeWidth={2} />
-          </span>
+      {navItems.map((item) => {
+        const isMultiplePaths = Array.isArray(item.path);
 
-          <span>{item.label}</span>
+        const isActive = isMultiplePaths
+          ? item.path.includes(location.pathname)
+          : location.pathname === item.path;
 
-          {item.badge && (
-            <span
-              className="
-                absolute
-                right-[18%]
-                top-2
-                flex h-4 min-w-4
-                items-center justify-center
-                rounded-full
-                bg-[#df7659]
-                px-1
-                text-[9px]
-                font-semibold
-                text-white
-              "
-            >
-              {item.badge}
+        const targetPath = isMultiplePaths
+          ? item.path[0]
+          : item.path;
+
+        return (
+          <NavLink
+            key={item.label}
+            to={targetPath}
+            className={`
+              relative
+              flex flex-1
+              flex-col
+              items-center
+              justify-center
+              gap-1
+              text-[10px]
+              transition-colors
+
+              ${
+                isActive
+                  ? "text-[#e47757]"
+                  : "text-[#aaa39a]"
+              }
+            `}
+          >
+            <span className="text-[19px] leading-none">
+              <item.icon
+                size={20}
+                strokeWidth={2}
+              />
             </span>
-          )}
-        </NavLink>
-      ))}
+
+            <span>{item.label}</span>
+
+            {item.badge && (
+              <span
+                className="
+                  absolute
+                  right-[18%]
+                  top-2
+                  flex h-4 min-w-4
+                  items-center justify-center
+                  rounded-full
+                  bg-[#df7659]
+                  px-1
+                  text-[9px]
+                  font-semibold
+                  text-white
+                "
+              >
+                {item.badge}
+              </span>
+            )}
+          </NavLink>
+        );
+      })}
     </nav>
   );
 };
