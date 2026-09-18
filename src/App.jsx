@@ -6,6 +6,7 @@ import Registration from './pages/Registration'
 import Radar from './pages/Radar';
 import FeedPeople from './pages/FeedPeople'
 import FeedPosts from './pages/FeedPosts'
+import Chats from './pages/Chats'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/home" element={<Radar />} />
         <Route path="/feed/people" element={<FeedPeople />} />
         <Route path="/feed/posts" element={<FeedPosts />} />
+        <Route path="/chats" element={<Chats />} />
       </Routes>
     </BrowserRouter>
     </>
