@@ -14,6 +14,7 @@ import {
   Gamepad2,
   Code2,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const iconMap = {
   Coffee,
@@ -29,6 +30,7 @@ const iconMap = {
 };
 
 const PersonCard = ({ person, onLike, onPass }) => {
+  const navigate = useNavigate();
   const {
     name,
     age,
@@ -42,7 +44,16 @@ const PersonCard = ({ person, onLike, onPass }) => {
 
   return (
     <article
-      className="relative flex h-[388px] w-full flex-col justify-end overflow-hidden rounded-[22px] border bg-[#171512] shadow-xl"
+      role="link"
+      tabIndex={0}
+      onClick={() => navigate(`/profile/${name.toLowerCase()}`)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          navigate(`/profile/${name.toLowerCase()}`);
+        }
+      }}
+      className="relative flex h-[388px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-[22px] border bg-[#171512] shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e99a82]"
       style={{
         borderColor: `${color}99`,
       }}
@@ -119,14 +130,14 @@ const PersonCard = ({ person, onLike, onPass }) => {
         {/* Actions */}
         <div className="mt-3 flex justify-center gap-3">
           <button
-            onClick={() => onPass(person)}
+            onClick={(event) => { event.stopPropagation(); onPass(person); }}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-700 bg-stone-800 text-[#df7659] transition hover:scale-105 hover:bg-stone-700"
           >
             <X size={19} />
           </button>
 
           <button
-            onClick={() => onLike(person)}
+            onClick={(event) => { event.stopPropagation(); onLike(person); }}
             className="flex h-11 w-11 items-center justify-center rounded-full bg-[#df7659] text-white shadow-lg shadow-[#df7659]/20 transition hover:scale-105 hover:bg-[#e98267]"
           >
             <Heart

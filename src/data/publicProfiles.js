@@ -1,0 +1,93 @@
+export const publicProfiles = [
+  {
+    id: "maya",
+    name: "Maya",
+    age: 21,
+    initials: "M",
+    color: "#b28b52",
+    program: "B.A. · Economics · 3rd year",
+    campus: "GGV",
+    from: "Raipur, India",
+    height: "5'4\"",
+    lookingFor: "Friends & dating",
+    mutuals: 3,
+    about: "Here for the desserts, staying for the playlist. Ask me about my thesis on 2000s pop.",
+    interests: ["☕ Coffee", "🎵 2000s Pop", "📚 Economics", "🍰 Desserts", "🎞️ Cinema"],
+    posts: [
+      { id: "maya-1", time: "2 hours ago", location: "Campus Café", emoji: "🍰", tag: "dessert first", background: "linear-gradient(135deg, #9b7042, #d9aa72)", likes: 24, comments: 5, caption: "The cheesecake was absolutely worth missing the first ten minutes of class." },
+      { id: "maya-2", time: "Yesterday", location: "Library Lawn", emoji: "🎧", tag: "study playlist", background: "linear-gradient(135deg, #60526f, #9a83ac)", likes: 18, comments: 3, caption: "Current thesis writing fuel: iced coffee and songs I have known every word to since 2008." },
+      { id: "maya-3", time: "4 days ago", location: "Central Lawn", emoji: "🌤️", tag: "slow afternoon", background: "linear-gradient(135deg, #88723f, #c9a455)", likes: 31, comments: 7, caption: "A very convincing argument for taking a proper lunch break." },
+    ],
+  },
+  {
+    id: "priya",
+    name: "Priya",
+    age: 20,
+    initials: "P",
+    color: "#60907a",
+    program: "B.Sc. · Biology · 2nd year",
+    campus: "GGV",
+    from: "Bilaspur, India",
+    height: "5'5\"",
+    lookingFor: "Friends",
+    mutuals: 2,
+    about: "Pre-med student looking for doubles badminton partners or study buddy support.",
+    interests: ["🏸 Badminton", "🧬 Biology", "📖 Study sessions", "🌿 Nature", "☕ Coffee"],
+    posts: [
+      { id: "priya-1", time: "45 min ago", location: "Sports Complex", emoji: "🏸", tag: "court time", background: "linear-gradient(135deg, #3f715f, #8dbb94)", likes: 19, comments: 4, caption: "Anyone up for doubles this weekend? I promise not to take the score too seriously." },
+      { id: "priya-2", time: "2 days ago", location: "Science Block", emoji: "🔬", tag: "lab day", background: "linear-gradient(135deg, #527a84, #8fb8bb)", likes: 27, comments: 6, caption: "A good lab day: every sample labelled correctly and no coffee spilled on the notes." },
+    ],
+  },
+  {
+    id: "theo",
+    name: "Theo",
+    age: 22,
+    initials: "T",
+    color: "#756c61",
+    program: "B.A. · Political Science · 4th year",
+    campus: "GGV",
+    from: "Delhi, India",
+    height: "5'10\"",
+    lookingFor: "Dating",
+    mutuals: 1,
+    about: "Debate captain by day, questionable dance moves at night.",
+    interests: ["🎙️ Debate", "🎬 Cinema", "🍕 Pizza", "🗞️ Politics", "🕺 Dance"],
+    posts: [
+      { id: "theo-1", time: "3 hours ago", location: "Open Air Theatre", emoji: "🎬", tag: "movie night", background: "linear-gradient(135deg, #574d49, #98877c)", likes: 22, comments: 8, caption: "Campus movie night needs one rule: the person picking the film also brings the snacks." },
+      { id: "theo-2", time: "5 days ago", location: "Student Centre", emoji: "🎙️", tag: "debate prep", background: "linear-gradient(135deg, #55465d, #977da2)", likes: 16, comments: 2, caption: "Trying to write an opening statement that sounds calm while feeling very much not calm." },
+    ],
+  },
+  {
+    id: "aarav", name: "Aarav", age: 21, initials: "A", color: "#806c99", program: "B.Tech · Computer Science · 3rd year", campus: "GGV", from: "Bhopal, India", height: "5'9\"", lookingFor: "Friends & dating", mutuals: 4,
+    about: "Usually debugging something. Looking for people who enjoy late-night coding sessions.", interests: ["🎮 Gaming", "☕ Coffee", "💻 Coding", "🎧 Music"],
+    posts: [{ id: "aarav-1", time: "1 hour ago", location: "Computer Lab", emoji: "🕹️", tag: "after class", background: "linear-gradient(135deg, #4f4669, #8d78ab)", likes: 14, comments: 4, caption: "A quick game before the next bug report comes in." }],
+  },
+  {
+    id: "sara", name: "Sara", age: 20, initials: "S", color: "#9a6f69", program: "B.A. · Psychology · 2nd year", campus: "GGV", from: "Raipur, India", height: "5'3\"", lookingFor: "Friends", mutuals: 2,
+    about: "Bookstore explorer, amateur painter and professional procrastinator.", interests: ["🎨 Painting", "📚 Books", "☕ Coffee", "🪴 Plants"],
+    posts: [{ id: "sara-1", time: "Yesterday", location: "Arts Block", emoji: "🎨", tag: "colour study", background: "linear-gradient(135deg, #855b5b, #c8917e)", likes: 20, comments: 5, caption: "Trying to capture the colour of campus at golden hour." }],
+  },
+  {
+    id: "kabir", name: "Kabir", age: 23, initials: "K", color: "#657d91", program: "B.Tech · Mechanical Engineering · 4th year", campus: "GGV", from: "Nagpur, India", height: "5'11\"", lookingFor: "Dating", mutuals: 3,
+    about: "Football on weekends and movies whenever deadlines allow it.", interests: ["⚽ Football", "🎬 Cinema", "🍕 Pizza", "🛠️ Making"],
+    posts: [{ id: "kabir-1", time: "2 days ago", location: "Main Ground", emoji: "⚽", tag: "weekend match", background: "linear-gradient(135deg, #466b77, #82a9b5)", likes: 28, comments: 9, caption: "Still thinking about that last-minute goal. Great match, great people." }],
+  },
+  {
+    id: "ananya", name: "Ananya", age: 21, initials: "A", color: "#927b5b", program: "B.Arch · Architecture · 3rd year", campus: "GGV", from: "Jabalpur, India", height: "5'6\"", lookingFor: "Friends", mutuals: 1,
+    about: "Architecture student who carries a sketchbook absolutely everywhere.", interests: ["✏️ Sketching", "🎵 Music", "☕ Coffee", "🏛️ Architecture"],
+    posts: [{ id: "ananya-1", time: "3 days ago", location: "Design Studio", emoji: "✏️", tag: "drafting", background: "linear-gradient(135deg, #71604b, #b79d73)", likes: 17, comments: 3, caption: "A small corner study of the old campus building." }],
+  },
+  {
+    id: "rohan", name: "Rohan", age: 22, initials: "R", color: "#5f817d", program: "B.Sc. · Physics · 4th year", campus: "GGV", from: "Ranchi, India", height: "5'8\"", lookingFor: "Friends & dating", mutuals: 5,
+    about: "Physics nerd with a surprisingly strong opinion about campus food.", interests: ["🏸 Badminton", "💬 Debate", "📚 Books", "🔭 Physics"],
+    posts: [{ id: "rohan-1", time: "4 days ago", location: "North Canteen", emoji: "🍛", tag: "food review", background: "linear-gradient(135deg, #426d68, #82aaa2)", likes: 36, comments: 12, caption: "The samosas have made a strong case for being the best thing on campus." }],
+  },
+  {
+    id: "zoya", name: "Zoya", age: 20, initials: "Z", color: "#866b80", program: "B.A. · Media Studies · 2nd year", campus: "GGV", from: "Mumbai, India", height: "5'5\"", lookingFor: "Dating", mutuals: 2,
+    about: "Film enthusiast looking for people to discuss terrible movies with.", interests: ["🎬 Cinema", "🍕 Pizza", "🎵 Music", "📷 Media"],
+    posts: [{ id: "zoya-1", time: "5 days ago", location: "Open Air Theatre", emoji: "🎥", tag: "film club", background: "linear-gradient(135deg, #644c62, #a77c9e)", likes: 23, comments: 7, caption: "Film club pick this week was beautifully terrible. Ten out of ten discussion afterwards." }],
+  },
+];
+
+export const getPublicProfile = (profileId) =>
+  publicProfiles.find((profile) => profile.id === profileId);

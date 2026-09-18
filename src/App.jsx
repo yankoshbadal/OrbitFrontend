@@ -10,6 +10,7 @@ import Chats from './pages/Chats'
 import Requests from './pages/Requests'
 import Connections from './pages/Connections'
 import Profile from './pages/Profile'
+import UserProfile from './pages/UserProfile'
 import Settings from './pages/Settings'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/requests" element={<Requests />} />
         <Route path="/connections" element={<Connections />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:profileId" element={<UserProfile />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>

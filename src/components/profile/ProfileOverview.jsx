@@ -13,7 +13,7 @@ const ProfileOverview = ({ profile }) => {
         {profile.avatarUrl ? (
           <img src={profile.avatarUrl} alt={`${profile.name}'s profile`} className="h-full w-full object-cover" />
         ) : (
-          <span className="text-[112px] font-bold text-white/70">Y</span>
+          <span className="text-[112px] font-bold text-white/70">{profile.initials || profile.name.charAt(0)}</span>
         )}
       </span>
       <div className="relative z-10">
