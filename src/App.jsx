@@ -8,6 +8,9 @@ import FeedPeople from './pages/FeedPeople'
 import FeedPosts from './pages/FeedPosts'
 import Chats from './pages/Chats'
 import Requests from './pages/Requests'
+import Connections from './pages/Connections'
+import Profile from './pages/Profile'
+import Settings from './pages/Settings'
 
 function App() {
 
@@ -23,6 +26,9 @@ function App() {
         <Route path="/feed/posts" element={<FeedPosts />} />
         <Route path="/chats" element={<Chats />} />
         <Route path="/requests" element={<Requests />} />
+        <Route path="/connections" element={<Connections />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
     </>

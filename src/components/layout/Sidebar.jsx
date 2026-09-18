@@ -6,7 +6,7 @@ import {
   UsersRound,
   UserCheck,
   MessageCircle,
-  Heart,
+  HeartHandshake,
   Settings,
 } from "lucide-react";
 
@@ -33,9 +33,9 @@ const navItems = [
     icon: MessageCircle,
   },
   {
-    label: "Us",
-    path: "/us",
-    icon: Heart,
+    label: "Connections",
+    path: "/connections",
+    icon: HeartHandshake,
   },
 ];
 
