@@ -16,6 +16,31 @@
             }
           }
 
-          .radar-scanner {
+.radar-scanner {
             animation: radar-scan 4s linear infinite;
           }
+
+/* Scoped scrollbar styling for the conversations and messages panes. */
+.chat-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #79645a #302d29;
+}
+
+.chat-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: #302d29;
+  border-radius: 999px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: #79645a;
+  border: 2px solid #302d29;
+  border-radius: 999px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a66450;
+}

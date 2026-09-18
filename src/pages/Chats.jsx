@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, Send } from "lucide-react";
 import { Sidebar } from "../components/layout/Sidebar";
 import Topbar from "../components/layout/Topbar";
 import MobileNav from "../components/layout/MobileNav";
@@ -45,16 +45,127 @@ const initialConversations = [
       { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
     ],
   },
+  {
+    id: "yankosh",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh1",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh2",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh3",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh4",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh5",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh7",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
+  {
+    id: "yankosh6",
+    name: "Yankosh",
+    initials: "Y",
+    color: "#dda441",
+    status: "ACTIVE NOW",
+    badge: "LET'S SEE",
+    time: "3h",
+    preview: "Hey! Loved your thesis topic on 20...",
+    messages: [
+      { id: 1, text: "Hey! Loved your thesis topic on 2000s pop.", sender: "them" },
+    ],
+  },
 ];
 
 const Chats = () => {
   const [conversations, setConversations] = useState(initialConversations);
   const [selectedId, setSelectedId] = useState("diego");
   const [draft, setDraft] = useState("");
+  const [isMobileChatOpen, setIsMobileChatOpen] = useState(false);
+  const messagesRef = useRef(null);
 
   const selectedConversation = conversations.find(
     (conversation) => conversation.id === selectedId,
   );
+
+  useEffect(() => {
+    const messages = messagesRef.current;
+    if (messages) messages.scrollTop = messages.scrollHeight;
+  }, [selectedId, selectedConversation.messages.length]);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -80,32 +191,35 @@ const Chats = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1e1d1b] font-[Inter] text-[#eee9e2]">
+    <div className="h-[100dvh] overflow-hidden bg-[#1e1d1b] font-[Inter] text-[#eee9e2]">
       <Sidebar />
       <Topbar />
 
-      <main className="pb-24 pt-20 lg:ml-[237px] lg:pb-8">
-        <div className="mx-auto max-w-[1228px] px-4 sm:px-6 lg:px-8">
-          <div className="mb-5 pt-3 sm:pt-4">
+      <main className="flex h-[calc(100dvh-68px)] flex-col pt-16 lg:ml-[237px] lg:h-[100dvh] lg:pb-8">
+        <div className="mx-auto flex min-h-0 w-full max-w-[1228px] flex-1 flex-col px-4 sm:px-6 lg:px-8">
+          <div className={`mb-5 shrink-0 pt-3 sm:pt-4 ${isMobileChatOpen ? "hidden md:block" : ""}`}>
             <p className="text-[11px] font-bold tracking-[0.08em] text-[#c0ab91]">
               CHATS
             </p>
             <h1 className="mt-1 font-[Space_Grotesk] text-3xl font-semibold tracking-tight text-[#f3eee7]">
-              Matches
+              ALL YOUR CHATS
             </h1>
           </div>
 
-          <section className="grid min-h-[min(706px,calc(100vh-160px))] overflow-hidden rounded-[23px] border border-[#45413c] bg-[#302d29] md:grid-cols-[340px_minmax(0,1fr)]">
-            <aside className="border-b border-[#45413c] p-3 md:border-b-0 md:border-r">
+          <section className="grid min-h-0 flex-1 overflow-hidden rounded-[23px] border border-[#45413c] bg-[#302d29] md:grid-cols-[340px_minmax(0,1fr)]">
+            <aside className={`${isMobileChatOpen ? "hidden" : "flex"} min-h-0 flex-col border-b border-[#45413c] p-3 md:flex md:border-b-0 md:border-r`}>
               <h2 className="px-2 pb-3 pt-2 text-base font-semibold">Conversations</h2>
-              <div className="space-y-1">
+              <div className="chat-scrollbar min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain pr-1">
                 {conversations.map((conversation) => {
                   const isSelected = conversation.id === selectedId;
                   return (
                     <button
                       key={conversation.id}
                       type="button"
-                      onClick={() => setSelectedId(conversation.id)}
+                      onClick={() => {
+                        setSelectedId(conversation.id);
+                        setIsMobileChatOpen(true);
+                      }}
                       className={`flex w-full items-center gap-3 rounded-xl px-2 py-3 text-left transition-colors ${
                         isSelected
                           ? "bg-[#5a3c30]"
@@ -138,8 +252,16 @@ const Chats = () => {
               </div>
             </aside>
 
-            <div className="flex min-h-[440px] flex-col">
+            <div className={`${isMobileChatOpen ? "flex" : "hidden"} min-h-0 flex-col md:flex`}>
               <header className="flex items-center gap-3 border-b border-[#45413c] px-6 py-[18px]">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileChatOpen(false)}
+                  aria-label="Back to conversations"
+                  className="-ml-2 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[#eee9e2] hover:bg-[#393631] md:hidden"
+                >
+                  <ArrowLeft size={20} />
+                </button>
                 <span
                   className="flex h-10 w-10 items-center justify-center rounded-[13px] text-sm font-semibold text-[#2b2522]"
                   style={{ backgroundColor: selectedConversation.color }}
@@ -154,7 +276,7 @@ const Chats = () => {
                 </div>
               </header>
 
-              <div className="flex flex-1 flex-col gap-3 p-6">
+              <div ref={messagesRef} className="chat-scrollbar flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain p-6 before:flex-1 before:content-['']">
                 {selectedConversation.messages.map((message) => (
                   <div
                     key={message.id}
