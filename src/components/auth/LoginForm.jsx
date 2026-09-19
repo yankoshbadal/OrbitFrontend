@@ -1,14 +1,34 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    try {
+      const res = await axios.post(
+        "http://localhost:3000/login",
+        {
+          email: email,
+          password: password,
+        },
+        {
+          withCredentials: true,
+        },
+      );
+      console.log("Login response:", res.data);
 
-    console.log("Send verification code to:", email);
+      if (res.data.success) {
+      navigate("/profile");
+    }
+    } catch (error) {
+      console.log("Login failed:", error.response?.data);
+    }
   };
 
   return (
@@ -53,6 +73,8 @@ const LoginForm = () => {
           type="email"
           placeholder="Password"
           required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           className="
             mt-2.5
             h-11
@@ -72,6 +94,7 @@ const LoginForm = () => {
         {/* Button */}
         <button
           type="submit"
+          onClick={handleSubmit}
           className="
             mt-2.5
             h-11
@@ -112,8 +135,7 @@ const LoginForm = () => {
             <button
               type="button"
               className="font-medium text-[#df6c4f] hover:underline"
-            >
-            </button>
+            ></button>
             412 students
           </span>{" "}
           verified at your school this week
